@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -31,6 +32,7 @@ import com.nguyenhoangthanhan.canvascustomui.ui.theme.darkGray
 import com.nguyenhoangthanhan.canvascustomui.ui.theme.gray
 import com.nguyenhoangthanhan.canvascustomui.ui.theme.redOrange
 import com.nguyenhoangthanhan.canvascustomui.ui.theme.white
+import kotlinx.coroutines.delay
 import java.lang.Math.PI
 import java.util.Calendar
 import java.util.Date
@@ -39,6 +41,20 @@ import kotlin.math.sin
 
 @Composable
 fun LiveClockScreen() {
+
+    var currentTimeInMs by remember {
+        mutableStateOf(System.currentTimeMillis())
+    }
+    LaunchedEffect(
+        key1 = true,
+        block = {
+            while (true){
+                delay(200)
+                currentTimeInMs = System.currentTimeMillis()
+            }
+        }
+    )
+
     Box(
         modifier = Modifier
             .background(white)
@@ -49,7 +65,7 @@ fun LiveClockScreen() {
         Clock(
             modifier = Modifier.size(500.dp),
             time = {
-                System.currentTimeMillis()
+                currentTimeInMs
             },
             circleRadius = 300f,
             outerCircleThickness = 25f
@@ -174,7 +190,7 @@ fun Clock(
                         }
 
                         ClockHand.Hours -> {
-                            (((hours % 12f) / 12f * 60) * minutes / 12f) * 360f / 60
+                            (((hours % 12f) / 12f * 60) + minutes / 12f) * 360f / 60
                         }
                     }
                     val lineLength = when (clockHand) {
@@ -216,9 +232,9 @@ fun Clock(
                         pivot = start,
                         block = {
                             drawLine(
-                                color = if (clockHand == ClockHand.Seconds){
+                                color = if (clockHand == ClockHand.Seconds) {
                                     redOrange
-                                }else{
+                                } else {
                                     gray
                                 },
                                 start = start,
