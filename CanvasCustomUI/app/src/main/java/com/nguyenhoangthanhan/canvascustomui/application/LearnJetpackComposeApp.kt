@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import com.nguyenhoangthanhan.canvascustomui.navigation.CanvasCustomUIRouter
 import com.nguyenhoangthanhan.canvascustomui.navigation.Screen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.HomeScreen
+import com.nguyenhoangthanhan.canvascustomui.ui.screens.LiveClockScreen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.MeasureInternetSpeechScreen
 
 @Composable
@@ -29,6 +30,10 @@ fun CanvasCustomUIApp() {
 
                 is Screen.MeasureInternetSpeechScreen -> {
                     MeasureInternetSpeechScreen()
+                }
+
+                is Screen.LiveClockScreen -> {
+                    LiveClockScreen()
                 }
             }
         }

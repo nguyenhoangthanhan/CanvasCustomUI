@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 sealed class Screen {
     data object HomeScreen: Screen()
     data object MeasureInternetSpeechScreen: Screen()
+    data object LiveClockScreen: Screen()
 }
 
 object CanvasCustomUIRouter{

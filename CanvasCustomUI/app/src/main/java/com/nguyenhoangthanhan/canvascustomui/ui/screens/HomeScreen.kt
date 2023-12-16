@@ -40,5 +40,15 @@ fun HomeScreen() {
             Text(text = "Open Measure Internet Speech Screen")
         }
 
+        Spacer(modifier = Modifier.size(16.dp))
+
+        Button(
+            onClick = {
+                CanvasCustomUIRouter.navigateTo(Screen.LiveClockScreen)
+            }
+        ) {
+            Text(text = "Open Live Clock Screen")
+        }
+
     }
 }
