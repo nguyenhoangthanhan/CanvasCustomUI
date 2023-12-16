@@ -50,5 +50,15 @@ fun HomeScreen() {
             Text(text = "Open Live Clock Screen")
         }
 
+        Spacer(modifier = Modifier.size(16.dp))
+
+        Button(
+            onClick = {
+                CanvasCustomUIRouter.navigateTo(Screen.BarChart3DScreen)
+            }
+        ) {
+            Text(text = "Open Bar Chart 3D Screen")
+        }
+
     }
 }
