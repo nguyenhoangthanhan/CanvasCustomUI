@@ -11,20 +11,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.nguyenhoangthanhan.learnjetpackcompose.navigation.LearnJetpackComposeRouter
-import com.nguyenhoangthanhan.learnjetpackcompose.navigation.Screen
+import com.nguyenhoangthanhan.canvascustomui.navigation.CanvasCustomUIRouter
+import com.nguyenhoangthanhan.canvascustomui.navigation.Screen
 
 @Composable
-fun HomeScreen(){
-    Column (
+fun HomeScreen() {
+    Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
+    ) {
 
         Button(
             onClick = {
-                LearnJetpackComposeRouter.navigateTo(Screen.HomeScreen)
+                CanvasCustomUIRouter.navigateTo(Screen.HomeScreen)
             }
         ) {
             Text(text = "Open Home Screen")
@@ -34,20 +34,10 @@ fun HomeScreen(){
 
         Button(
             onClick = {
-                LearnJetpackComposeRouter.navigateTo(Screen.DelegationScreen)
+                CanvasCustomUIRouter.navigateTo(Screen.MeasureInternetSpeechScreen)
             }
         ) {
-            Text(text = "Open Delegation Screen")
-        }
-
-        Spacer(modifier = Modifier.size(16.dp))
-
-        Button(
-            onClick = {
-                LearnJetpackComposeRouter.navigateTo(Screen.NavigateBackWithResultScreen)
-            }
-        ) {
-            Text(text = "Open Navigate Back With Result Screen")
+            Text(text = "Open Measure Internet Speech Screen")
         }
 
     }
