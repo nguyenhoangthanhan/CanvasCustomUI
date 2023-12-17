@@ -8,6 +8,7 @@ sealed class Screen {
     data object MeasureInternetSpeechScreen: Screen()
     data object LiveClockScreen: Screen()
     data object BarChart3DScreen: Screen()
+    data object ClickableCalendarScreen: Screen()
 }
 
 object CanvasCustomUIRouter{

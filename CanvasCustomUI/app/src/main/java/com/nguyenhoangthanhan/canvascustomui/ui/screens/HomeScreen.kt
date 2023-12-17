@@ -60,5 +60,15 @@ fun HomeScreen() {
             Text(text = "Open Bar Chart 3D Screen")
         }
 
+        Spacer(modifier = Modifier.size(16.dp))
+
+        Button(
+            onClick = {
+                CanvasCustomUIRouter.navigateTo(Screen.ClickableCalendarScreen)
+            }
+        ) {
+            Text(text = "Open Clickable Calendar Screen")
+        }
+
     }
 }

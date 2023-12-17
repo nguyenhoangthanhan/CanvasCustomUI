@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import com.nguyenhoangthanhan.canvascustomui.navigation.CanvasCustomUIRouter
 import com.nguyenhoangthanhan.canvascustomui.navigation.Screen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.BarChart3DScreen
+import com.nguyenhoangthanhan.canvascustomui.ui.screens.ClickableCalendarScreen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.HomeScreen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.LiveClockScreen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.MeasureInternetSpeechScreen
@@ -39,6 +40,10 @@ fun CanvasCustomUIApp() {
 
                 is Screen.BarChart3DScreen -> {
                     BarChart3DScreen()
+                }
+
+                is Screen.ClickableCalendarScreen -> {
+                    ClickableCalendarScreen()
                 }
             }
         }

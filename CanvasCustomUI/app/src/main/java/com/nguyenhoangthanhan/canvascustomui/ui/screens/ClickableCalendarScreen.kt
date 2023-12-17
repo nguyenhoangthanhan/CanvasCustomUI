@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.nguyenhoangthanhan.canvascustomui.navigation.CanvasCustomUIRouter
 import com.nguyenhoangthanhan.canvascustomui.navigation.Screen
+import com.nguyenhoangthanhan.canvascustomui.navigation.SystemBackButtonHandler
 
 @Composable
 fun ClickableCalendarScreen() {
@@ -30,15 +31,9 @@ fun ClickableCalendarScreen() {
             Text(text = "Open Live Clock Screen")
         }
 
-        Spacer(modifier = Modifier.size(16.dp))
+    }
 
-        Button(
-            onClick = {
-                CanvasCustomUIRouter.navigateTo(Screen.BarChart3DScreen)
-            }
-        ) {
-            Text(text = "Open Bar Chart 3D Screen")
-        }
-
+    SystemBackButtonHandler {
+        CanvasCustomUIRouter.navigateTo(Screen.HomeScreen)
     }
 }
