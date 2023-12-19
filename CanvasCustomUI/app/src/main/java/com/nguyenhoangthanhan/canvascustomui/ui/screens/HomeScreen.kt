@@ -70,5 +70,15 @@ fun HomeScreen() {
             Text(text = "Open Clickable Calendar Screen")
         }
 
+        Spacer(modifier = Modifier.size(16.dp))
+
+        Button(
+            onClick = {
+                CanvasCustomUIRouter.navigateTo(Screen.CircularProgressIndicatorScreen)
+            }
+        ) {
+            Text(text = "Open Circular Progress Indicator Screen")
+        }
+
     }
 }

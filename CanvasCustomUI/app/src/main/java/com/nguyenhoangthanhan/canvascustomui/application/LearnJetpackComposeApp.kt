@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import com.nguyenhoangthanhan.canvascustomui.navigation.CanvasCustomUIRouter
 import com.nguyenhoangthanhan.canvascustomui.navigation.Screen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.BarChart3DScreen
+import com.nguyenhoangthanhan.canvascustomui.ui.screens.CircularProgressIndicatorScreen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.ClickableCalendarScreen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.HomeScreen
 import com.nguyenhoangthanhan.canvascustomui.ui.screens.LiveClockScreen
@@ -44,6 +45,10 @@ fun CanvasCustomUIApp() {
 
                 is Screen.ClickableCalendarScreen -> {
                     ClickableCalendarScreen()
+                }
+
+                is Screen.CircularProgressIndicatorScreen -> {
+                    CircularProgressIndicatorScreen()
                 }
             }
         }
